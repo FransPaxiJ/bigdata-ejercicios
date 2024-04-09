@@ -24,6 +24,7 @@ for secciones in secciones:
     # Obtenemos el src que esta dentro de la etiqueta img
     img_tag = secciones.find('a').get('href')
     # Obtenemos la fecha que esta dentro de la etiqueta img
+    # el {4} indica que se espera un número de 4 dígitos y el / indica que se espera un slash
     fecha = re.search(r'\d{4}/\d{2}/\d{2}', img_tag)
     # Si la fecha no es encontrada, se asigna un mensaje
     if fecha:
