@@ -23,9 +23,12 @@ for secciones in secciones:
     descripcion = secciones.find('p').text
     # Obtenemos el src que esta dentro de la etiqueta img
     img_tag = secciones.find('a').get('href')
+    # -----------------------------------
+    # Esto es expresiones regulares (regex) para buscar la fecha en la url de la imagen
     # Obtenemos la fecha que esta dentro de la etiqueta img
     # el {4} indica que se espera un número de 4 dígitos y el / indica que se espera un slash
     fecha = re.search(r'\d{4}/\d{2}/\d{2}', img_tag)
+    # -----------------------------------
     # Si la fecha no es encontrada, se asigna un mensaje
     if fecha:
         fecha = fecha.group()
