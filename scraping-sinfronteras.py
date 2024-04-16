@@ -65,9 +65,11 @@ with codecs.open('noticias_sf.csv', 'w', 'utf-8-sig') as csvfile:
            for p_resumen in h4_resumen.find_all('p'):
                descripcion_p = p_resumen.text
                print("descripcion_p",descripcion_p)
-               for div_resumen in h4_resumen.find_all('div'):
-                   descripcion_div = div_resumen.text
-                   print("descripcion_div",descripcion_div)
+               
+               #for div_resumen in h4_resumen.find_all('div'):
+                   #descripcion_div = div_resumen.text
+                   #print("descripcion_div",descripcion_div)
+               #*/
         resumen_h_p = descripcion_h4 + descripcion_p + descripcion_div
         print(resumen_h_p)
         # Obtenemos el enlace que esta dentro de la etiqueta a
