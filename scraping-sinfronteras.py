@@ -5,7 +5,6 @@ import re
 import csv # esta librería nos permite escribir o crear archivos csv
 import codecs # para manejar la codificacion (utf-8) de nuestro archivo csv
 
-
 # semilla
 url = 'https://diariosinfronteras.com.pe/category/puno/'
 response = requests.get(url)
@@ -59,6 +58,7 @@ with codecs.open('noticias_sf.csv', 'w', 'utf-8-sig') as csvfile:
         c_href = enlace.get("href")
         # Buscamos la fecha en el enlace
         f_math = re.search(r'\d{4}/\d{2}/\d{2}', c_href)
+        # Se encuen
         dfecha = f_math.group()
         csvWriter.writerow([dfecha, titulo, resumen])
     
